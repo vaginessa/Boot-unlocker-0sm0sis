@@ -19,7 +19,7 @@ You know that in order to prevent an unauthorized user from accessing your data 
 [URL]http://www.apache.org/licenses/LICENSE-2.0.html[/URL].
 You can redistribute, reuse, or modify this software as permitted under this license.
 
-Source code is maintained on Google Code, along current and previous versions of the complied application:
+Source code is maintained on GitHub, along current and previous versions of the complied application:
 [URL]https://github.com/segv11/boot-unlocker[/URL]
 
 [SIZE="1"]Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. [/SIZE]
