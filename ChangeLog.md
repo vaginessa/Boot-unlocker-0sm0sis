@@ -3,6 +3,11 @@
 
 ### Version 1.6.3: ###
  * Adds support for "yotaphone2" (Yota Phone 2)
+ * Adds support for "lettuce" / "YUPHORIA" (YU Yuphoria)
+ * Adds support for "tomato" / "YUREKA" (YU Yureka)
+ * Adds support for "ham" / "Z1" (Lenovo Zuk Z1)
+ * Adds support for "VNA" (InFocus M810)
+ * Adds support for "VN2" (InFocus M812)
 
 ### Version 1.6.2: ###
  * Adds support for "OnePlus2" (OnePlus 2)
