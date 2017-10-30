@@ -89,6 +89,10 @@ public class bootLoader {
             return new bootLoader_YUYureka();
         } else if (android.os.Build.DEVICE.equals("YUREKA")) {
             return new bootLoader_YUYureka();
+        } else if (android.os.Build.DEVICE.equals("VNA")) {
+            return new bootLoader_InFocusM810();
+        } else if (android.os.Build.DEVICE.equals("VN2")) {
+            return new bootLoader_InFocusM812();
         } else {
             return null;
         }

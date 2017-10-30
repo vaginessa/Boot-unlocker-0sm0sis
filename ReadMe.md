@@ -8,6 +8,7 @@ This application **REQUIRES** a Galaxy Nexus (*maguro*, *toro* or
 (*bacon* / *A0001*), OnePlus 2 (*OnePlus2*), OnePlus X
 (*OnePlus* / *ONE* / *E1001*), YU Yuphoria (*lettuce* / *YUPHORIA*),
 YU Yureka (*tomato* / *YUREKA*),
+InFocus M810 (*VNA*), InFocus M812 (*VN2*),
 or Yota Phone 2 (*yotaphone2*) with root.
 
 ------------------------------------------------------------------------
