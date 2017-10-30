@@ -81,6 +81,10 @@ public class bootLoader {
             return new bootLoader_OnePlusX();
         } else if (android.os.Build.DEVICE.equals("yotaphone2")) {
             return new bootLoader_YotaPhone2();
+        } else if (android.os.Build.DEVICE.equals("lettuce")) {
+            return new bootLoader_YUYuphoria();
+        } else if (android.os.Build.DEVICE.equals("YUPHORIA")) {
+            return new bootLoader_YUYuphoria();
         } else {
             return null;
         }

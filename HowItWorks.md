@@ -22,9 +22,9 @@ internal storage. Device partitions, positions and state values
 * On the Nexus 7 (2013), the bootloader uses position
   `0x04FFC00` of the "aboot" partition, stored as `00` / `02`.
 
-* On the OnePlus One and OnePlus X, the bootloaders use position
+* On the OnePlus One, OnePlus X and YU Yuphoria, the bootloaders use position
   `0x000FFE10` of the "aboot" partition, stored as `00` / `01`.
-  The OnePlus One and OnePlus X have a "Tamper" flag, at position
+  The OnePlus One, OnePlus X and YU Yuphoria have a "Tamper" flag, at position
   `0x000FFE14` of the "aboot" partition, stored as `00` / `01` (untampered/tampered).
 
 * On the OnePlus 2, the bootloader uses position
