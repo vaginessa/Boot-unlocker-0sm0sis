@@ -31,7 +31,7 @@ public class bootLoader_YotaPhone2 extends bootLoader {
     private static final String TAG = "net.segv11.bootLoader_YotaPhone2";
 
     /**
-     * Private constants for working with the lock state in the param partition
+     * Private constants for working with the lock state in the aboot partition
      */
     private static final String queryCommand =
             "dd ibs=1 count=1 skip=5242384 if=/dev/block/platform/msm_sdcc.1/by-name/aboot  # query ";
@@ -57,7 +57,7 @@ public class bootLoader_YotaPhone2 extends bootLoader {
 
 
     /**
-     * Finds out (from the param partition) if the bootloader is unlocked
+     * Finds out (from the aboot partition) if the bootloader is unlocked
      */
     @Override
     public int getBootLoaderState() {
