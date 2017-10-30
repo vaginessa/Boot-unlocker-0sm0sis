@@ -32,6 +32,11 @@ internal storage. Device partitions, positions and state values
   The OnePlus 2 has a "Tamper" flag, at position
   `0x00000014` of the "devinfo" partition, stored as `00` / `01` (untampered/tampered).
 
+* On the Lenovo Zuk Z1, the bootloader uses position
+  `0x001FFE10` of the "aboot" partition, stored as `00` / `01`.
+  The Lenovo Zuk Z1 has a "Tamper" flag, at position
+  `0x001FFE14` of the "aboot" partition, stored as `00` / `01` (untampered/tampered).
+
 * On the Yota Phone 2, the bootloader uses position
   `0x004FFE10` of the "aboot" partition, stored as `00` / `01`.
 
