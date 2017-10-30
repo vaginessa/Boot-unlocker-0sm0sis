@@ -1,4 +1,4 @@
-[COLOR="Red"][B][U]NEW[/U]: Even though they are not Nexus devices, some OnePlus devices are now supported. [/B][/COLOR]
+[COLOR="Red"][B][U]NEW[/U]: beta version available! [/B][/COLOR]
 
 [B][SIZE="+2"]BootUnlocker for Nexus Devices -- Unlock your bootloader without fastboot.[/SIZE][/B]
 
