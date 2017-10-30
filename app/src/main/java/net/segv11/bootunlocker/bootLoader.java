@@ -85,6 +85,10 @@ public class bootLoader {
             return new bootLoader_YUYuphoria();
         } else if (android.os.Build.DEVICE.equals("YUPHORIA")) {
             return new bootLoader_YUYuphoria();
+        } else if (android.os.Build.DEVICE.equals("tomato")) {
+            return new bootLoader_YUYureka();
+        } else if (android.os.Build.DEVICE.equals("YUREKA")) {
+            return new bootLoader_YUYureka();
         } else {
             return null;
         }
