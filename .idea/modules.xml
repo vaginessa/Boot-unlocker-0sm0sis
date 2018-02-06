@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BootUnlocker.iml" filepath="$PROJECT_DIR$/BootUnlocker.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boot-unlocker-sziraqui.iml" filepath="$PROJECT_DIR$/boot-unlocker-sziraqui.iml" />
     </modules>
   </component>
 </project>
-
