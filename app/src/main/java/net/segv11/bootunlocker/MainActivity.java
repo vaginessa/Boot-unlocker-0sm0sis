@@ -22,6 +22,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -46,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
 
 
@@ -231,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
             Button clearButton = (Button) findViewById(R.id.clearButton);
 
             TextView extendedStatus = (TextView) findViewById(R.id.extendedStatus);
-            LinearLayout tamperLL = (LinearLayout) findViewById(R.id.tamperLayout);
+            CardView tamperLL = findViewById(R.id.tamperLayout);
 
             if (result == bootLoader.BL_UNLOCKED || result == bootLoader.BL_TAMPERED_UNLOCKED) {
                 bootLoaderStatusText.setText(R.string.stat_unlocked);
@@ -272,8 +276,12 @@ public class MainActivity extends AppCompatActivity {
                     clearButton.setEnabled(false);
                 }
                 tamperLL.setVisibility(View.VISIBLE);
+                setButton.setVisibility(View.VISIBLE);
+                clearButton.setVisibility(View.VISIBLE);
             } else {
                 tamperLL.setVisibility(View.GONE);
+                setButton.setVisibility(View.GONE);
+                clearButton.setVisibility(View.GONE);
             }
 
         } // onPostExecute

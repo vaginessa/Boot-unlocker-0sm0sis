@@ -7,7 +7,7 @@
     <string name="root_required">Root is <b>VEREIST</b> voor deze applicatie.</string>
     <string name="verb_lock">Vergrendel</string>
     <string name="verb_unlock">Ontgrendel</string>
-    <string name="bootloader_status">Bootloader status:</string>
+    <string name="bootloader_status">Bootloader status</string>
     <string name="stat_locked">Vergrendeld</string>
     <string name="stat_unlocked">Ontgrendeld</string>
     <string name="stat_no_root">Geen root-toegang</string>
@@ -16,10 +16,10 @@
     <string name="stat_not_tampered">Untampered</string>
     <string name="waiting_for_root">Wachten op root…</string>
     <string name="extra_unknown_device">Apparaat “%1$s"” wordt niet ondersteund.</string>
-    <string name="version">Applicatie versie:</string>
-    <string name="device">Apparaat: </string>
-    <string name="bootloader">Bootloader: </string>
-    <string name="tamper_flag">Tamper Flag:</string>
+    <string name="version">Applicatie versie</string>
+    <string name="device">Apparaat</string>
+    <string name="bootloader">Bootloader</string>
+    <string name="tamper_flag">Tamper Flag</string>
     <string name="verb_clear_tamper">Untamper</string>
     <string name="verb_set_tamper">Tamper</string>
     <string name="unknown">Onbekend</string>
