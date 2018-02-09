@@ -23,17 +23,18 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.constraint.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/boot_loader_status_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp">
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
@@ -41,98 +42,94 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <TextView
-                        android:id="@+id/textView1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/bootloader_status"
-                        android:textSize="20sp"
-                        app:layout_constraintEnd_toEndOf="parent"
+                    <ImageView
+                        android:id="@+id/boot_loader_status_iv"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_question_outline"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/boot_loader_status_msg_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/bootloader_status"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toEndOf="@id/boot_loader_status_iv"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
                         android:id="@+id/bootLoaderStatusText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/unknown"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="@+id/boot_loader_status_msg_tv"
+                        app:layout_constraintTop_toBottomOf="@id/boot_loader_status_msg_tv" />
+
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
-                        android:text="@string/unknown"
-                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/welcome_text"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/textView1" />
+                        app:layout_constraintTop_toBottomOf="@id/boot_loader_status_iv" />
                 </android.support.constraint.ConstraintLayout>
             </android.support.v7.widget.CardView>
-
-            <ImageView
-                android:id="@+id/lock_iv"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_margin="16dp"
-                android:src="@drawable/ic_lock"
-                app:layout_constraintBottom_toBottomOf="@+id/lockButton"
-                app:layout_constraintEnd_toStartOf="@+id/lockButton"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/lockButton" />
-
-            <Button
-                android:id="@+id/lockButton"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/verb_lock"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/lock_iv"
-                app:layout_constraintTop_toBottomOf="@id/boot_loader_status_card" />
+                android:layout_marginTop="16dp">
+                <Button
+                    android:id="@+id/lockButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/verb_lock"
+                    android:layout_weight="1"/>
 
-            <ImageView
-                android:id="@+id/unlock_iv"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_margin="16dp"
-                android:src="@drawable/ic_unlock"
-                app:layout_constraintBottom_toBottomOf="@+id/unlockButton"
-                app:layout_constraintEnd_toStartOf="@+id/unlockButton"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/unlockButton" />
+                <Button
+                    android:id="@+id/unlockButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/verb_unlock"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
             <android.support.v7.widget.CardView
                 android:id="@+id/extended_status_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/unlockButton"
-                app:layout_constraintStart_toStartOf="parent"
-               android:layout_margin="16dp">
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp">
+
                 <TextView
-                    android:id="@+id/extendedStatus"
+                    android:id="@+id/root_required_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
-                    android:text="@string/extra_unknown_device"/>
+                    android:text="@string/root_required" />
             </android.support.v7.widget.CardView>
-            <Button
-                android:id="@+id/unlockButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/verb_unlock"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/unlock_iv"
-                app:layout_constraintTop_toBottomOf="@id/lockButton" />
 
             <android.support.v7.widget.CardView
                 android:id="@+id/tamperLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/extended_status_card">
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp">
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
@@ -141,7 +138,7 @@
                     android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/tamper_flag_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/tamper_flag"
@@ -156,47 +153,60 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="8dp"
                         android:text="@string/unknown"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/textView2" />
-
+                        app:layout_constraintTop_toBottomOf="@id/tamper_flag_text" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tamper_text"
+                        android:textSize="12sp"
+                        app:layout_constraintTop_toBottomOf="@id/tamperFlagText"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
                 </android.support.constraint.ConstraintLayout>
             </android.support.v7.widget.CardView>
-
-            <Button
-                android:id="@+id/setButton"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/verb_set_tamper"
-                android:layout_marginStart="8dp"
+                android:orientation="horizontal"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toStartOf="@+id/clearButton"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tamperLayout" />
-
-            <Button
-                android:id="@+id/clearButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/verb_clear_tamper"
-                android:layout_marginEnd="8dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/setButton"
-                app:layout_constraintTop_toBottomOf="@id/tamperLayout" />
+                android:layout_marginTop="16dp">
+                <Button
+                    android:id="@+id/setButton"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/verb_set_tamper"
+                    app:layout_constraintEnd_toStartOf="@+id/clearButton"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tamperLayout" />
+
+                <Button
+                    android:layout_weight="1"
+                    android:id="@+id/clearButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/verb_clear_tamper"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/setButton"
+                    app:layout_constraintTop_toBottomOf="@id/tamperLayout" />
+            </LinearLayout>
 
             <android.support.v7.widget.CardView
                 android:id="@+id/summary_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/clearButton">
+                android:layout_marginBottom="16dp">
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
@@ -217,7 +227,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/version"
-                        app:layout_constraintStart_toStartOf="@+id/bootloaderID"
+                        app:layout_constraintStart_toStartOf="@+id/deviceID"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -232,15 +242,17 @@
                         android:id="@+id/deviceID"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/version"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="@string/device"
+                        app:layout_constraintStart_toStartOf="@+id/bootloaderID"
                         app:layout_constraintTop_toBottomOf="@id/version_tv" />
 
                     <TextView
                         android:id="@+id/modelID"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/device"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="@string/model"
                         app:layout_constraintEnd_toStartOf="@id/deviceID"
                         app:layout_constraintTop_toBottomOf="@id/version_tv" />
 
@@ -256,12 +268,13 @@
                         android:id="@+id/bootloaderID"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
                         android:text="@string/bootloader"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/device_tv" />
                 </android.support.constraint.ConstraintLayout>
             </android.support.v7.widget.CardView>
-        </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

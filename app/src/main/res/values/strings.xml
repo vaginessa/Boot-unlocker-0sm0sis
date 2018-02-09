@@ -17,7 +17,7 @@
     <string name="waiting_for_root">Waiting for root…</string>
     <string name="extra_unknown_device">Device “%1$s"” not supported.</string>
     <string name="version">App Version</string>
-    <string name="device">Device: </string>
+    <string name="device">Device</string>
     <string name="bootloader">Bootloader</string>
     <string name="tamper_flag">Tamper Flag</string>
     <string name="verb_clear_tamper">Untamper</string>
@@ -27,6 +27,7 @@
     <string name="title_activity_about">AboutActivity</string>
     <string name="about_text">Hello world!  This is the text for the About Screen.</string>
     <string name="action_about">About BootUnlocker</string>
+    <string name="model">Model</string>
 
 
 </resources>
