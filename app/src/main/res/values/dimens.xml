@@ -6,5 +6,6 @@
     <dimen name="small_margin">10dp</dimen>
     <dimen name="small_pad">10dp</dimen>
     <dimen name="large_pad">20dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
 
 </resources>
