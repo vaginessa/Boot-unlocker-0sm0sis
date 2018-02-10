@@ -16,6 +16,7 @@
 
 package net.segv11.bootunlocker;
 
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.AsyncTask;
@@ -47,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences sf = getSharedPreferences(getString(R.string.preferences_settings),MODE_PRIVATE);
+        Boolean useLightTheme = sf.getBoolean(getString(R.string.preferences_key_light_theme),false);
+        if(useLightTheme)
+            setTheme(R.style.AppThemeLight);
+        else setTheme(R.style.AppThemeDark);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -57,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        // getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -67,12 +74,25 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
+        SharedPreferences sf;
+        switch (id){
+            case R.id.light_theme:
+                sf = getSharedPreferences("settings",MODE_PRIVATE);
+                sf.edit().putBoolean("light_theme",true).apply();
+                recreate();
+                break;
+            case R.id.dark_theme:
+                sf = getSharedPreferences("settings",MODE_PRIVATE);
+                sf.edit().putBoolean("light_theme",false).apply();
+                recreate();
+                break;
+        }
         return super.onOptionsItemSelected(item);
     }
 
 
     /**
+     *
      * Called at the start of the visible lifetime
      */
     @Override
@@ -253,11 +273,14 @@ public class MainActivity extends AppCompatActivity {
             } else if (result == bootLoader.BL_UNSUPPORTED_DEVICE) {
                 bootLoaderStatusText.setText(R.string.stat_unknown_device);
                 lockButton.setEnabled(false);
+                lockButton.setTextColor(getColor(R.color.gray));
                 unlockButton.setEnabled(false);
+                unlockButton.setTextColor(getColor(R.color.gray));
                 Resources res = getResources();
                 Snackbar.make(tamperLL.getRootView(),String.format(
                         res.getString(R.string.extra_unknown_device),
-                        android.os.Build.DEVICE),Snackbar.LENGTH_LONG).show();
+                        android.os.Build.DEVICE),Snackbar.LENGTH_LONG)
+                        .show();
             } else {
                 bootLoaderStatusText.setText(R.string.stat_no_root);
                 bootLoaderStatusIcon.setImageResource(R.drawable.ic_unsupported_device);

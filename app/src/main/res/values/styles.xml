@@ -1,22 +1,33 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- application themes -->
+    <style name="AppThemeLight" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/accent</item>
-
+        <item name="colorAccent">@android:color/white</item>
+        <item name="android:textColorPrimary">@color/primary</item>
+        <item name="android:textColorPrimaryDisableOnly">@android:color/darker_gray</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
     </style>
+
+    <style name="AppThemeDark" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorPrimaryDisableOnly">@android:color/darker_gray</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+    <!-- Text styles -->
     <style name="TextAppearanceTitle" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/primary_dark</item>
         <item name="android:textSize">20sp</item>
     </style>
     <style name="TextAppearanceBody" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/primary_dark</item>
         <item name="android:textSize">14sp</item>
     </style>
     <style name="TextAppearanceSmall" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/primary</item>
         <item name="android:textSize">12sp</item>
     </style>
 </resources>
