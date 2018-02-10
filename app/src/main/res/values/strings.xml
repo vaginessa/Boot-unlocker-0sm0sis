@@ -7,7 +7,7 @@
     <string name="root_required">Root is <b>REQUIRED</b> for this application.</string>
     <string name="verb_lock">Lock</string>
     <string name="verb_unlock">Unlock</string>
-    <string name="bootloader_status">Bootloader Status:</string>
+    <string name="bootloader_status">Bootloader Status</string>
     <string name="stat_locked">Locked</string>
     <string name="stat_unlocked">Unlocked</string>
     <string name="stat_no_root">No root access</string>
@@ -16,10 +16,10 @@
     <string name="stat_not_tampered">Untampered</string>
     <string name="waiting_for_root">Waiting for root…</string>
     <string name="extra_unknown_device">Device “%1$s"” not supported.</string>
-    <string name="version">App Version:</string>
-    <string name="device">Device: </string>
-    <string name="bootloader">Bootloader: </string>
-    <string name="tamper_flag">Tamper Flag:</string>
+    <string name="version">App Version</string>
+    <string name="device">Device</string>
+    <string name="bootloader">Bootloader</string>
+    <string name="tamper_flag">Tamper Flag</string>
     <string name="verb_clear_tamper">Untamper</string>
     <string name="verb_set_tamper">Tamper</string>
     <string name="unknown">Unknown</string>
@@ -27,6 +27,7 @@
     <string name="title_activity_about">AboutActivity</string>
     <string name="about_text">Hello world!  This is the text for the About Screen.</string>
     <string name="action_about">About BootUnlocker</string>
+    <string name="model">Model</string>
 
 
 </resources>

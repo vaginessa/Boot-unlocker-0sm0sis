@@ -21,13 +21,16 @@ import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -46,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
 
 
@@ -230,32 +235,34 @@ public class MainActivity extends AppCompatActivity {
             Button setButton = (Button) findViewById(R.id.setButton);
             Button clearButton = (Button) findViewById(R.id.clearButton);
 
-            TextView extendedStatus = (TextView) findViewById(R.id.extendedStatus);
-            LinearLayout tamperLL = (LinearLayout) findViewById(R.id.tamperLayout);
+            CardView tamperLL = findViewById(R.id.tamperLayout);
 
+            ImageView bootLoaderStatusIcon = findViewById(R.id.boot_loader_status_iv);
             if (result == bootLoader.BL_UNLOCKED || result == bootLoader.BL_TAMPERED_UNLOCKED) {
                 bootLoaderStatusText.setText(R.string.stat_unlocked);
+                bootLoaderStatusIcon.setImageResource(R.drawable.ic_unlock);
                 lockButton.setEnabled(true);
                 unlockButton.setEnabled(true);
-                extendedStatus.setText("");
+
             } else if (result == bootLoader.BL_LOCKED || result == bootLoader.BL_TAMPERED_LOCKED) {
                 bootLoaderStatusText.setText(R.string.stat_locked);
+                bootLoaderStatusIcon.setImageResource(R.drawable.ic_lock);
                 lockButton.setEnabled(true);
                 unlockButton.setEnabled(true);
-                extendedStatus.setText("");
+
             } else if (result == bootLoader.BL_UNSUPPORTED_DEVICE) {
                 bootLoaderStatusText.setText(R.string.stat_unknown_device);
                 lockButton.setEnabled(false);
                 unlockButton.setEnabled(false);
                 Resources res = getResources();
-                extendedStatus.setText(String.format(
+                Snackbar.make(tamperLL.getRootView(),String.format(
                         res.getString(R.string.extra_unknown_device),
-                        android.os.Build.DEVICE));
+                        android.os.Build.DEVICE),Snackbar.LENGTH_LONG).show();
             } else {
                 bootLoaderStatusText.setText(R.string.stat_no_root);
+                bootLoaderStatusIcon.setImageResource(R.drawable.ic_unsupported_device);
                 lockButton.setEnabled(false);
                 unlockButton.setEnabled(false);
-                extendedStatus.setText("");
             }
 
             if (theBootLoader != null && theBootLoader.hasTamperFlag()) {
@@ -272,8 +279,12 @@ public class MainActivity extends AppCompatActivity {
                     clearButton.setEnabled(false);
                 }
                 tamperLL.setVisibility(View.VISIBLE);
+                setButton.setVisibility(View.VISIBLE);
+                clearButton.setVisibility(View.VISIBLE);
             } else {
                 tamperLL.setVisibility(View.GONE);
+                setButton.setVisibility(View.GONE);
+                clearButton.setVisibility(View.GONE);
             }
 
         } // onPostExecute
