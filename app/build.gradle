@@ -42,7 +42,10 @@ android {
 
     productFlavors {
     }
-    sourceSets { debug { assets.srcDirs = [ 'assets/'] } }
+    sourceSets {
+        debug { assets.srcDirs = ['assets/'] }
+        main { res.srcDirs = ['src/main/res', 'src/main/res/menu'] }
+    }
 }
 
 dependencies {
