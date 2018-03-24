@@ -27,6 +27,11 @@
     <string name="title_activity_about">AboutActivity</string>
     <string name="about_text">Hello world!  Dit is de tekst voor de over About Screen.</string>
     <string name="action_about">Over BootUnlocker</string>
+    <string name="model">Model</string>
+    <string name="light_theme">Light theme</string>
+    <string name="dark_theme">Dark theme</string>
+    <string name="preferences_settings">settings</string>
+    <string name="preferences_key_light_theme">light_theme</string>
 
 
 </resources>
