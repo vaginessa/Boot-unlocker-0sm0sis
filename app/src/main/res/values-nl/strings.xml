@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">BootUnlocker</string>
     <string name="welcome_text">Met BootUnlocker kunt u uw bootloader vergrendelen en ontgrendelen in Android zelf, zonder uw apparaat te herstarten of aan uw pc te hangen. <i>BootUnlocker verwijdert je gegevens NIET.</i></string>
     <string name="tamper_text">Sommige bootloaders op nieuwere apparaten hebben een \'tamper flag\', deze geeft aan of uw apparaat ooit ontgrendeld is geweest. Met BootUnlocker kunt u resetten.</string>
@@ -25,13 +24,11 @@
     <string name="unknown">Onbekend</string>
 
     <string name="title_activity_about">AboutActivity</string>
-    <string name="about_text">Hello world!  Dit is de tekst voor de over About Screen.</string>
+    <string name="about_text">Hello world!  Dit is de tekst voor het \'Over\' scherm.</string>
     <string name="action_about">Over BootUnlocker</string>
     <string name="model">Model</string>
-    <string name="light_theme">Light theme</string>
-    <string name="dark_theme">Dark theme</string>
+    <string name="light_theme">Licht thema</string>
+    <string name="dark_theme">Donker thema</string>
     <string name="preferences_settings">settings</string>
     <string name="preferences_key_light_theme">light_theme</string>
-
-
 </resources>
